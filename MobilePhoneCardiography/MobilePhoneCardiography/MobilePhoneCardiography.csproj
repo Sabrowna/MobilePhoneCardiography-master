@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\ItemDetailViewModel.cs" />
+    <Compile Remove="ViewModels\ItemsViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\FindPatientView.xaml.cs">
+      <DependentUpon>FindPatientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MeasurementDetailView.xaml.cs">
+      <DependentUpon>MeasurementDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginSPView.xaml.cs">
+      <DependentUpon>LoginSPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RecordingsView.xaml.cs">
+      <DependentUpon>RecordingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MeasureView.xaml.cs">
+      <DependentUpon>MeasureView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

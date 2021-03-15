@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MobilePhoneCardiography.Models;assembly=MobilePhoneCardiography"
+             xmlns:viewModels="clr-namespace:MobilePhoneCardiography.ViewModels;assembly=MobilePhoneCardiography"
+             x:Class="MobilePhoneCardiography.Views.MeasurementDetailView"
+             Title="{Binding Title}">
+
+    <!--<StackLayout Spacing="20" Padding="15" x:DataType="models:Measurement">
+        <Label Text="Start Time:" FontSize="Medium" />
+        <Label Text="{Binding StartTime}" FontSize="Small"/>
+        <Label Text="Probability Percentage:" FontSize="Medium" />
+        <Label Text="{Binding ProbabilityPercentage}" FontSize="Small"/>
+    </StackLayout>-->
+    <ContentPage.BindingContext>
+        <viewModels:MeasurementDetailViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="" Command="{Binding NewRecordingCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Frame BackgroundColor="AliceBlue">
+        <StackLayout>
+            <StackLayout BackgroundColor="AliceBlue" Orientation="Vertical">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Entry Text="Date" FontSize ="Medium" IsEnabled="False" />
+                        <Label Text="{Binding StartTime}" FontSize="Small" IsEnabled="False"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand">
+                        <Entry Text="Length" FontSize="Medium" IsEnabled="False"/>
+                        <Label Text="{Binding AmountOfSamples}" FontSize="Small" IsEnabled="False"/>
+                    </StackLayout>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="FillAndExpand">
+                        <Entry Text="Risk" FontSize="Medium" IsEnabled="False"/>
+                        <Label Text="{Binding ProbabilityPercentage}" FontSize="Small" IsEnabled="False"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="FillAndExpand">
+                        <Entry Text="Employee ID" FontSize="Medium" IsEnabled="False" />
+                        <Label Text="{Binding HealthProffesionalID}" FontSize="Small" IsEnabled="False"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <Frame VerticalOptions="FillAndExpand">
+                <Image Aspect="Fill" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Source="https://image.freepik.com/free-vector/sound-wave-with-imitation-sound-audio-identification-technology_106065-64.jpg"/>
+            </Frame>
+          
+            <StackLayout>
+                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="Playback Tempo"/>
+                <Slider   Value="1.0" MinimumTrackColor="LightBlue" MaximumTrackColor="AliceBlue" Minimum="0.05" Maximum="2.0"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Play"/>
+                <Button Text="Stop"/>
+                <Button Text="Rewind"/>
+                <Button Text="Forward"/>
+            </StackLayout>
+            
+
+        </StackLayout>
+    </Frame>
+
+<!--<StackLayout>
+        <Frame BorderColor="Azure" Padding="5">
+            <StackLayout BackgroundColor="AliceBlue" Orientation="Horizontal" Spacing="20" Padding="15">
+                <StackLayout Orientation="Vertical">
+                    <Label HeightRequest="40" Text="Date" FontSize="Medium" />
+                    <Label Text="{Binding StartTime}" FontSize="Small"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Length" FontSize="Medium" />
+                    <Label Text="{Binding AmountOfSamples}" FontSize="Small"/>
+                    </StackLayout>
+                <StackLayout>
+                    <Label Text="Risk" FontSize="Medium" />
+                    <Label Text="{Binding ProbabilityPercentage}" FontSize="Small"/>
+                    </StackLayout>
+                <StackLayout>
+                    <Label Text="ID of Health Proffesional" FontSize="Medium" />
+                    <Label Text="{Binding HealthProffesionalID}" FontSize="Small"/>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+        <StackLayout>
+            <Image HeightRequest="400" Aspect="Fill" VerticalOptions="CenterAndExpand" HorizontalOptions="Fill" Source="https://image.freepik.com/free-vector/sound-wave-with-imitation-sound-audio-identification-technology_106065-64.jpg">
+            </Image>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Play"></Button>
+            <Button Text="Stop"></Button>
+            <Button Text="Rewind"></Button>
+            <Button Text="Forward"></Button>
+        </StackLayout>
+        <StackLayout>
+            <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="Playback Tempo"></Label>
+            <Slider   Value="1.0" MinimumTrackColor="LightBlue" MaximumTrackColor="AliceBlue" Minimum="0.05" Maximum="2.0">
+            </Slider>
+        </StackLayout>
+    </StackLayout>-->
+    
+</ContentPage>

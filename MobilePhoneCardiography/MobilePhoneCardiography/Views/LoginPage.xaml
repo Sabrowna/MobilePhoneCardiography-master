@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MobilePhoneCardiography.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    
+    
+    
+    
+    <ContentPage.Content>
+     
+            <!--<StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Welcome to your Mobile Phonocardiograpic App. Please choose type of user:" FontSize="Title"/>
+                        --><!--<ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                            <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                        </ContentView>--><!--
+                </StackLayout>
+            </StackLayout>-->
+            <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+                <Label Text="Welcome to your Mobile Phonocardiograpic App. Please choose type of user:" FontSize="Title"/>
+                <Button VerticalOptions="Center" Text="Private User" AutomationId ="PrivateUserLoginButton"  Command="{Binding LoginPBCommand}"/>
+                <Button VerticalOptions="Center" Text="Healthcare Professional" Command="{Binding LoginSPCommand}"/>
+            </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

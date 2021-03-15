@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilePhoneCardiography.Views.MeasureView"
+             xmlns:vm="clr-namespace:MobilePhoneCardiography.ViewModels"
+             xmlns:models="clr-namespace:MobilePhoneCardiography.Models;assembly=MobilePhoneCardiography"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:MeasureViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+    <Frame BackgroundColor="AliceBlue">
+        <StackLayout>
+            <StackLayout BackgroundColor="AliceBlue" Orientation="Vertical">
+                <Grid Column="2">
+                    <StackLayout Grid.Column="0" Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                        <Entry Text="Social Security Number" FontSize="Medium" IsEnabled="False" />
+                        <Label Text="{Binding StartTime}" FontSize="Small" IsEnabled="False"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand">
+                        <Entry Text="Name" FontSize="Medium" IsEnabled="False"/>
+                        <Label Text="{Binding AmountOfSamples}" FontSize="Small" IsEnabled="False"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+            <Frame VerticalOptions="FillAndExpand">
+
+            </Frame>
+            <StackLayout>
+                <Label FontSize="Medium" HorizontalTextAlignment="Center" Text="Gain"/>
+                <Slider   Value="1.0" MinimumTrackColor="LightBlue" MaximumTrackColor="AliceBlue" Minimum="0.05" Maximum="2.0"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Text="Start Recording" IsVisible="{Binding StartVisible}"/>
+                <Button Text="Stop Recording" IsVisible="{Binding StopVisible}"/>
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+
+</ContentPage>
